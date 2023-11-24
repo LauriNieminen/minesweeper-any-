@@ -218,6 +218,10 @@ export const action = (
     return newGame;
   }
 
+  if (newGame.board[coordinate].isFlagged) {
+    return newGame;
+  }
+
   if (newGame.board[coordinate].isRevealed) {
     if (
       countNeighboringFlags(
